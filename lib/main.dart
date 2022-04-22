@@ -35,12 +35,10 @@ class _homeScreenState extends State<homeScreen> {
         centerTitle: true,
         title: const Text("Calculator",
           style:  TextStyle(
-            fontSize: 20,
-
+            fontSize: 50,
+            color: Colors.black,
           )
         )
-
-
       ),
     );
 
