@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CalcButton extends StatelessWidget {
+class Button extends StatelessWidget {
   final String text;
   final int fillColor;
   final int textColor;
   final double textSize;
   final Function callback;
 
-  const CalcButton({
+  const Button({
     Key? key,
     required this.text,
     required this.fillColor,
-    this.textColor = 0xFFFFFFFF,
+    this.textColor = 0xFFfc25b4,
     this.textSize = 28,
     required this.callback,
   }) : super(key: key);

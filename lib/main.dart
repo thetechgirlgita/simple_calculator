@@ -51,9 +51,25 @@ class CalcAppState extends State<CalcApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Calculator',
       home: Scaffold(
-        backgroundColor: const Color(0xFF283637),
+        appBar: AppBar(
+          leading:
+
+            IconButton(
+                onPressed: (){},
+                icon: const Icon(Icons.menu),
+              iconSize: 30,
+            ),
+
+          title:  const Text("Simple Calculator",
+            style: TextStyle(
+              fontSize: 26,
+              fontWeight: FontWeight.bold,
+            )
+          ),
+          centerTitle: true,
+        ),
+        backgroundColor: const Color(0xFFffffff),
         body: Container(
           padding: const EdgeInsets.all(12),
           child: Column(
@@ -67,7 +83,7 @@ class CalcAppState extends State<CalcApp> {
                     style: GoogleFonts.rubik(
                       textStyle: const TextStyle(
                         fontSize: 24,
-                        color:  Color(0xFF545F61),
+                        color:  Color(0xff0472f7),
                       ),
                     ),
                   ),
@@ -82,7 +98,7 @@ class CalcAppState extends State<CalcApp> {
                     style: GoogleFonts.rubik(
                       textStyle: const TextStyle(
                         fontSize: 48,
-                        color: Colors.white,
+                        color: Color(0xff0472f7),
                       ),
                     ),
                   ),
@@ -92,28 +108,31 @@ class CalcAppState extends State<CalcApp> {
               const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                 children: <Widget>[
-                  CalcButton(
+
+                  Button(
                     text: 'AC',
                     fillColor: 0xFF6C807F,
                     textSize: 20,
+                    textColor: 0xFFfc25b4,
                     callback: allClear,
                   ),
-                  CalcButton(
+                  Button(
                     text: 'C',
                     fillColor: 0xFF6C807F,
                     callback: clear,
                   ),
-                  CalcButton(
+                  Button(
                     text: '%',
                     fillColor: 0xFFFFFFFF,
                     textColor: 0xFF65BDAC,
                     callback: numClick,
                   ),
-                  CalcButton(
+                  Button(
                     text: '/',
                     fillColor: 0xFFFFFFFF,
-                    textColor: 0xFF65BDAC,
+                    textColor: 0xFFfc25b4,
                     callback: numClick,
                   ),
                 ],
@@ -121,24 +140,24 @@ class CalcAppState extends State<CalcApp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  CalcButton(
+                  Button(
                     text: '7',
-                    fillColor: 0xFFFFFFFF,
+                    fillColor: 0xFFFF89FF,
                     callback: numClick,
                   ),
-                  CalcButton(
+                  Button(
                     text: '8',
                     fillColor: 0xFFFFFFFF,
                     callback: numClick,
                   ),
-                  CalcButton(
-                    fillColor: 0xFFFFFFFF,
+                  Button(
+                    fillColor: 0xFFfc25b4,
                     text: '9',
                     callback: numClick,
                   ),
-                  CalcButton(
+                  Button(
                     text: '*',
-                    fillColor: 0xFFFFFFFF,
+                    fillColor: 0xFFfc25b4,
                     textColor: 0xFF65BDAC,
                     textSize: 24,
                     callback: numClick,
@@ -148,24 +167,24 @@ class CalcAppState extends State<CalcApp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  CalcButton(
+                  Button(
                     text: '4',
                     callback: numClick,
-                      fillColor: 0xFFFFFFFF,
+                      fillColor: 0xFFfc25b4,
                   ),
-                  CalcButton(
+                  Button(
                     text: '5',
-                    fillColor: 0xFFFFFFFF,
+                    fillColor: 0xFFfc25b4,
                     callback: numClick,
                   ),
-                  CalcButton(
+                  Button(
                     text: '6',
                     callback: numClick,
-                      fillColor: 0xFFFFFFFF,
+                      fillColor: 0xFFfc25b4,
                   ),
-                  CalcButton(
+                  Button(
                     text: '-',
-                    fillColor: 0xFFFFFFFF,
+                    fillColor: 0xFFfc25b4,
                     textColor: 0xFF65BDAC,
                     textSize: 38,
                     callback: numClick,
@@ -175,22 +194,22 @@ class CalcAppState extends State<CalcApp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  CalcButton(
+                  Button(
                     text: '1',
-                    callback: numClick, fillColor: 0xFFFFFFFF,
+                    callback: numClick, fillColor: 0xFFfc25b4,
                   ),
-                  CalcButton(
+                  Button(
                     text: '2',
-                    callback: numClick, fillColor: 0xFFFFFFFF,
+                    callback: numClick, fillColor: 0xFFfc25b4,
                   ),
-                  CalcButton(
+                  Button(
                     text: '3',
                     callback: numClick,
-                      fillColor: 0xFFFFFFFF,
+                      fillColor: 0xFFfc25b4,
                   ),
-                  CalcButton(
+                  Button(
                     text: '+',
-                    fillColor: 0xFFFFFFFF,
+                    fillColor: 0xFFfc25b4,
                     textColor: 0xFF65BDAC,
                     textSize: 30,
                     callback: numClick,
@@ -200,25 +219,25 @@ class CalcAppState extends State<CalcApp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  CalcButton(
+                  Button(
                     text: '.',
-                    fillColor: 0xFFFFFFFF,
+                    fillColor: 0xFFfc25b4,
                     callback: numClick,
                   ),
-                  CalcButton(
+                  Button(
                     text: '0',
-                    fillColor: 0xFFFFFFFF,
+                    fillColor: 0xFFfc25b4,
                     callback: numClick,
                   ),
-                  CalcButton(
+                  Button(
                     text: '00',
                     callback: numClick,
-                    fillColor: 0xFFFFFFFF,
+                    fillColor: 0xFFfc25b4,
                     textSize: 26,
                   ),
-                  CalcButton(
+                  Button(
                     text: '=',
-                    fillColor: 0xFFFFFFF4,
+                    fillColor: 0xFFfc25b4,
                     textColor: 0xFF659DAC,
                     callback: evaluate,
                   ),
