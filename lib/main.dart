@@ -218,8 +218,8 @@ class CalcAppState extends State<CalcApp> {
                   ),
                   CalcButton(
                     text: '=',
-                    fillColor: 0xFFFFFFFF,
-                    textColor: 0xFF65BDAC,
+                    fillColor: 0xFFFFFFF4,
+                    textColor: 0xFF659DAC,
                     callback: evaluate,
                   ),
                 ],
